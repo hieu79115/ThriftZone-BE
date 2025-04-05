@@ -21,8 +21,8 @@ app.use(cookieParser());
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
-app.use("/api/auth", authRoutes);
 app.use(isAuthenticated);
+app.use("/api/auth", authRoutes);
 // console.log(swaggerDocs);
 dotenv.config();
 const PORT = process.env.PORT || 5000;
