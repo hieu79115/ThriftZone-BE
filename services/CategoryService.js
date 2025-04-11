@@ -1,6 +1,6 @@
 import Category from "../models/Category.js";
 import Item from "../models/Item.js";
-class CategoryService {
+export default class CategoryService {
     async createCategory(name, description, parentCategory) {
         if(parentCategory && !(await Category.findById(parentCategory))) {
             throw new Error("Parent category not found");
@@ -25,4 +25,3 @@ class CategoryService {
         return await Item.find({categoryId: categoryId}).populate('sellterId');
     }
 }
-export default CategoryService;
