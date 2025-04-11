@@ -53,7 +53,7 @@ const deleteAddress = async (req, res) => {
             req.params.id,
             req.user._id
         );
-        res.status(201).json(result);
+        res.status(200).json(result);
     } catch (err) {
         res.status(400).json(err);
     }

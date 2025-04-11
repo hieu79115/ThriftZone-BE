@@ -29,7 +29,7 @@ const updateItem = async (req, res) => {
             req.body,
             req.user._id
         );
-        res.status(201).json(item);
+        res.status(200).json(item);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -41,7 +41,7 @@ const deleteItem = async (req, res) => {
             req.params.id,
             req.user._id
         );
-        res.status(201).json(result);
+        res.status(200).json(result);
     } catch (err) {
         res.status(400).json(err);
     }
