@@ -1,6 +1,6 @@
 import Address from "../models/Address.js";
 import User from "../models/User.js";
-class AddressService {
+ class AddressService {
     async addAddress(userId, addressData)
     {
         const user= await User.findById(userId);
@@ -34,3 +34,4 @@ class AddressService {
         return address;
     }
 }
+export default AddressService;

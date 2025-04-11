@@ -82,3 +82,4 @@ class ItemService {
         return validTransition[oldStatus].includes(newStatus)|| false;
     }
 }
+export default ItemService;

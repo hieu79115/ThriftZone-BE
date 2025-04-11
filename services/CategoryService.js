@@ -25,3 +25,4 @@ class CategoryService {
         return await Item.find({categoryId: categoryId}).populate('sellterId');
     }
 }
+export default CategoryService;

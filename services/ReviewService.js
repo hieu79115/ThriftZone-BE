@@ -1,6 +1,6 @@
 import Review from "../models/Review.js";
 
-class ReviewService {
+export default class ReviewService {
     async updateReview(reviewId, userId, rating, comment)
     {
         const review = await Review.findById(reviewId);
