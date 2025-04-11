@@ -36,9 +36,6 @@ class ItemService {
         if (item.sellerId !== sellerId && !(await isAuthorized(sellerId, true, true, 'ITEM' === true))) {
             throw new Error("unauthorized as seller");
         }
-        if (itemData.condition && !Object.values(ITEM_CONDITIONS).includes(itemData.condition)) {
-            throw new Error('Invalid condition');
-        }
         if (itemData.status && !this.isValidItemStatusTransition(item.status, itemData.status)) {
             throw new Error('Invalid status transition');
         }

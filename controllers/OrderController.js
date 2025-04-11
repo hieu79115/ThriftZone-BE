@@ -1,4 +1,4 @@
-import OrderService from '../Services/OrderService';
+import OrderService from './Services/OrderService';
 const orderService = new OrderService();
 const createOrder= async (req,res)=>{
     try

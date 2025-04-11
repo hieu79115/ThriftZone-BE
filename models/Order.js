@@ -6,7 +6,7 @@ const OrderSchema = new mongoose.Schema({
     billingAddress:{type:String, required: true},
     orderDate:{type:Date, default:Date.now},
     totalAmount:{type:Number, default:0},
-    orderStatus:{type:String, Enum:['PENDING','DELIVERING','FULFILLED','REJECTED']},
+    orderStatus:{type:String, enum:['PENDING','DELIVERING','FULFILLED','REJECTED']},
     trackingNumber:{type:String, required: true},
     item:{type:String, required: true},
 })

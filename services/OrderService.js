@@ -3,7 +3,7 @@ import Order from "../models/Order.js";
 import Address from "../models/Address.js";
 import Payment from "../models/Payment.js";
 import isAuthorized from "./AuthorizationService.js";
-
+import Item from "../models/Item.js";
 class OrderService{
     async createOrder(buyerId,shippingAddressId,billingAddressId,itemId,paymentId){
         const buyer= await User.findById(buyerId);
@@ -67,7 +67,7 @@ class OrderService{
             throw new Error("payment failed!");
         }
         return order;
-    }e
+    }
     async shipOrder(orderId, trackingNumber)
     {
         const order=Order.findById(orderId);
