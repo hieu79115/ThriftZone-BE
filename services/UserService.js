@@ -1,5 +1,5 @@
 import User from "../models/User.js";
-import {passwordHash, validatePassword} from "./encryption.js";
+import {passwordHash, validatePassword} from "./Encryption.js";
 import Address from "../models/Address.js";
 import Order from "../models/Order.js";
 import Review from "../models/Review.js";

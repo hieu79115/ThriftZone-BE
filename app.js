@@ -12,14 +12,14 @@ import swaggerUI from "swagger-ui-express";
 import { swaggerDocs } from "./config/swagger.js";
 
 // Import routes
-import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import itemRoutes from "../routes/itemRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import addressRoutes from "../routes/addressRoutes.js";
-import paymentRoutes from "../routes/paymentRoutes.js";
-import reviewRoutes from "../routes/reviewRoutes.js";
-import categoryRoutes from "../routes/categoryRoutes.js";
+import authRoutes from "./routes/AuthRoutes.js";
+import userRoutes from "./routes/UserRoutes.js";
+import itemRoutes from "./routes/ItemRoutes.js";
+import orderRoutes from "./routes/OrderRoutes.js";
+import addressRoutes from "./routes/AddressRoutes.js";
+import paymentRoutes from "./routes/PaymentRoutes.js";
+import reviewRoutes from "./routes/ReviewRoutes.js";
+import categoryRoutes from "./routes/CategoryRoutes.js";
 
 const app = express();
 
@@ -47,12 +47,10 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/categories", categoryRoutes);
 
-// Basic route for API health check
 app.get("/api", (req, res) => {
     res.status(200).json({ message: "ThriftZone API is running" });
 });
 
-// Connect to database and start server
 const PORT = process.env.PORT || 5001;
 
 connectDB().then(() => {
