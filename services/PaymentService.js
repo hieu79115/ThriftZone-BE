@@ -1,9 +1,6 @@
-// services/paymentService.js
-const Payment = require('../models/Payment');
-const Order = require('../models/Order');
-// Assume Stripe integration
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
+import Payment from '../models/Payment.js';
+import Order from '../models/Order.js';
 class PaymentService {
     // Initiate a payment
     async initiatePayment(orderId, amount, paymentMethod) {
@@ -11,7 +8,7 @@ class PaymentService {
         if (!order) throw new Error('Order not found');
 
         const paymentIntent = await stripe.paymentIntents.create({
-            amount: amount * 100, // Convert to cents
+            amount: amount * 100, 
             currency: 'usd',
             payment_method: paymentMethod,
             confirmation_method: 'manual',
@@ -65,5 +62,4 @@ class PaymentService {
         return payment;
     }
 }
-
-module.exports = new PaymentService();
+export default PaymentService;

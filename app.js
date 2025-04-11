@@ -54,7 +54,8 @@ app.get("/api", (req, res) => {
 const PORT = process.env.PORT || 5001;
 
 connectDB().then(() => {
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT} \n link: http://localhost:${PORT}/api-docs`));
+
 }).catch((error) => {
     console.error("Database connection failed:", error);
     process.exit(1);

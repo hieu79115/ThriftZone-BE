@@ -2,15 +2,15 @@
 import mongoose from "mongoose";
 
 async function connectDB() {
-    const connectionString = process.env.CONNECTION_STRING;
+    let connectionString = process.env.CONNECTION_STRING;
 
-    // Validate connection string
-    if (!connectionString || typeof connectionString !== "string") {
+    if (!connectionString) {
         console.error("Error: MONGODB_URI is not defined or invalid in environment variables");
-        process.exit(1);
+        connectionString = "mongodb+srv://npt911:HZHlx2ECJbKt9L0G@thriftzone.nfyrfcp.mongodb.net/main-noodle?retryWrites=true&w=majority&tls=true";
+
+        // process.exit(1);
     }
 
-    // Singleton connection
     if (!connectDB.database) {
         try {
             connectDB.database = await mongoose.connect(connectionString, {

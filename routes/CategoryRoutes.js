@@ -6,8 +6,8 @@ import {
     updateCategory,
     deleteCategory
 } from "../controllers/CategoryController.js";
-import { authMiddleware } from "../middleware/authMiddleware.js"; // Fix: middleware (singular)
-import { adminMiddleware } from "../middleware/adminMiddleware.js"; // Fix: middleware (singular)
+import { authMiddleware } from "../middleware/authMiddleware.js"; 
+import { adminMiddleware } from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
