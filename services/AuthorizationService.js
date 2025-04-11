@@ -1,5 +1,5 @@
-import Privilege from "../models/Privilege";
-import Administrator from "../models/Administrator";
+import Privilege from "../models/Privilege.js";
+import Administrator from "../models/Administrator.js";
 async function isAuthorized(userId,toRead,toWrite,object)
 {
     const role = await Administrator.findOne({userId: userId});

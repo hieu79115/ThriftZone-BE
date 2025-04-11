@@ -1,7 +1,6 @@
 // services/paymentService.js
 const Payment = require('../models/Payment');
 const Order = require('../models/Order');
-const { PAYMENT_STATUSES } = require('../constants/enums');
 // Assume Stripe integration
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
