@@ -7,7 +7,7 @@ import { connectDB } from './config/mongoose.js';
 import swaggerUI from "swagger-ui-express";
 import { swaggerDocs } from "./config/swagger.js";
 import authRoutes from "./routes/authRoutes.js";
-
+import orderRoutes from "./routes/orderRoutes.js";
 const app = express();
 
 app.use(express.json());
@@ -23,7 +23,7 @@ app.use(session({
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/order",orderRoutes);
 // console.log(swaggerDocs);
 dotenv.config();
 const PORT = process.env.PORT || 5001;
