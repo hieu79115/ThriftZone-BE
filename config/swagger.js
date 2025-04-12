@@ -8,6 +8,22 @@ const swaggerOptions = {
             version: "1.0.0",
             description: "API documentation for Thrift Zone",
         },
+        servers: [
+            {
+                url: "",
+                description: "Development server"
+            }
+        ],
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: "http",
+                    scheme: "bearer",
+                    bearerFormat: "JWT",
+                    in: "header"
+                }
+            }
+        },
     },
     apis: ["./routes/*.js"],
 };
