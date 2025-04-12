@@ -256,4 +256,31 @@ router.put('/profile', updateUser);
  */
 router.delete('/account', deleteUser);
 
+/**
+ * @swagger
+ * /api/users/check-jwt:
+ *   post:
+ *     summary: Check whether JWT is valid
+ *     description: Simple endpoint to verify if the provided JWT token is valid
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Valid JWT
+ *       401:
+ *         description: Invalid JWT
+ */
+router.post('/check-jwt', (req, res) => {
+  // This route is already protected by authMiddleware
+  // If we reach this point, the JWT is valid
+  res.status(200).json({ 
+    message: "JWT validation successful",
+    user: {
+      id: req.user._id,
+      username: req.user.username
+    }
+  });
+});
 export default router;
