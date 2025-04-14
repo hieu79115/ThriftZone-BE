@@ -5,13 +5,11 @@ dotenv.config();
 if (!process.env.MONGODB_URI) {
     throw new Error('Add Mongo URI to .env.local');
 }
-
-const uri = process.env.MONGODB_URI;
-
+const uri = process.env.CONNECTION_STRING;
+console.log(uri)
 const options = {};
 let client;
 let db;
-
 async function connectDB() {
     if (!client) {
       client = new MongoClient(uri, options);
