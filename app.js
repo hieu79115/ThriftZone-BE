@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
+import session from "express-session";
 
 // Load environment variables first
 dotenv.config();
