@@ -59,6 +59,18 @@ app.get("/api", (req, res) => {
 
 const PORT = process.env.PORT || 5001;
 
+// Connect to MongoDB and start the server
+// import { connectDB } from './config/mongodb.js';
+// 
+// connectDB().then(({db}) => {
+//     app.locals.db = db;
+//     app.listen(PORT, () => console.log(`Server running on port ${PORT} \n link: http://localhost:${PORT}/api-docs`));
+
+// }).catch((error) => {
+//     console.error("Database connection failed:", error);
+//     process.exit(1);
+// });
+
 connectDB().then(() => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT} \n link: http://localhost:${PORT}/api-docs`));
 

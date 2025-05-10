@@ -6,8 +6,6 @@ async function connectDB() {
 
     if (!connectionString) {
         console.error("Error: MONGODB_URI is not defined or invalid in environment variables");
-        connectionString = "mongodb+srv://npt911:HZHlx2ECJbKt9L0G@thriftzone.nfyrfcp.mongodb.net/main-noodle?retryWrites=true&w=majority&tls=true";
-
         // process.exit(1);
     }
 
@@ -17,13 +15,13 @@ async function connectDB() {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
             });
-            console.log(`Connected to database\nConnection string: ${connectionString}`);
+            console.log(`Connected to database`);
         } catch (error) {
             console.error("MongoDB connection failed:", error);
             process.exit(1);
         }
     } else {
-        console.log(`Already connected to database\nConnection string: ${connectionString}`);
+        console.log(`Already connected to database`);
     }
 
     return connectDB.database;
